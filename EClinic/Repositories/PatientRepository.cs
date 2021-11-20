@@ -36,6 +36,12 @@ namespace EClinic.Repositories
             return await patientCollection.Find(filter).SingleOrDefaultAsync();
         }
 
+        public async Task<Patient> GetPatientAsync(string username)
+        {
+            var filter = filterBuilder.Eq(patient => patient.Username, username);
+            return await patientCollection.Find(filter).SingleOrDefaultAsync();
+        }
+
         public async Task UpdatePatientAsync(Patient patient)
         {
             var filter = filterBuilder.Eq(existingPatient => existingPatient.Id, patient.Id);

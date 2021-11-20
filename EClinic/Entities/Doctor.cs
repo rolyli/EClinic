@@ -7,5 +7,7 @@ namespace EClinic.Entities
         public Guid Id { get; init; }
         public string Name { get; set; }
         public DateTimeOffset CreatedDate { get; init; }
+
+        
     }
 }

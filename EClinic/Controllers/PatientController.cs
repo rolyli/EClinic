@@ -27,6 +27,8 @@ namespace EClinic.Controllers
             Patient patient = new() {
                 Id = Guid.NewGuid(),
                 Name = patientDto.Name,
+                Username = patientDto.Username,
+                Password = patientDto.Password,
                 CreatedDate = DateTimeOffset.UtcNow
             };
 
