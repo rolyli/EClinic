@@ -35,18 +35,28 @@ namespace EClinic
             BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
             BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
 
+            services.AddMvc(options =>
+            {
+            options.SuppressAsyncSuffixInActionNames = false;
+            });
+            
             services.AddSingleton<IMongoClient>(serviceProvider => {
                 var settings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
                 return new MongoClient(settings.ConnectionString);
             });
 
             services.AddSingleton<IPatientRepository, PatientRepository>();
+            services.AddSingleton<IDoctorRepository, DoctorRepository>();
+            services.AddSingleton<IAppointmentRepository, AppointmentRepository>();
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EClinic", Version = "v1" });
             });
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

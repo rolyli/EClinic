@@ -1,8 +1,8 @@
 using System;
 
-namespace EClinic.Entities 
+namespace EClinic.Dtos
 {
-    public class Patient 
+    public record DoctorDto
     {
         public Guid Id { get; init; }
         public string Name { get; set; }

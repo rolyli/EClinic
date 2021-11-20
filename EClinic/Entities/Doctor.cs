@@ -2,7 +2,7 @@ using System;
 
 namespace EClinic.Entities 
 {
-    public class Patient 
+    public class Doctor 
     {
         public Guid Id { get; init; }
         public string Name { get; set; }
