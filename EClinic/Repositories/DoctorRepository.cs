@@ -46,5 +46,11 @@ namespace EClinic.Repositories
             var filter = filterBuilder.Eq(doctor => doctor.Id, id);
             await doctorCollection.DeleteOneAsync(filter);
         }
+
+        public async Task<Doctor> GetDoctorAsync(string username)
+        {
+            var filter = filterBuilder.Eq(doctor => doctor.Username, username);
+            return await doctorCollection.Find(filter).SingleOrDefaultAsync();
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System.Text.Json;
 using System.Threading.Tasks;
 using EClinic.Dtos;
 using EClinic.Repositories;
@@ -10,22 +11,31 @@ namespace EClinic.Controllers
     public class LoginController : ControllerBase
     {
         private readonly IPatientRepository patientRepository;
+        private readonly IDoctorRepository doctorRepository;
 
-        public LoginController(IPatientRepository patientRepository)
+        public LoginController(IPatientRepository patientRepository, IDoctorRepository doctorRepository)
         {
             this.patientRepository = patientRepository;
+            this.doctorRepository = doctorRepository;
         }
 
         [HttpPost]
         public async Task<ActionResult> LoginPatientAsync(LoginPatientDto loginPatientDto)
         {
-            // todo: return JWT token instead...
             var patient = await patientRepository.GetPatientAsync(loginPatientDto.Username);
+            var doctor = await doctorRepository.GetDoctorAsync(loginPatientDto.Username);
 
+            // todo: return JWT token
             if ((patient != null) && (patient.Password == loginPatientDto.Password))
             {
                 // login successful
-                return Content("true");
+                return Content(JsonSerializer.Serialize(patient));
+            }
+
+            if ((doctor != null) && (doctor.Password == loginPatientDto.Password))
+            {
+                // login successful
+                return Content(JsonSerializer.Serialize(doctor));
             }
 
             // login failure

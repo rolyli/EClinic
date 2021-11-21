@@ -10,6 +10,7 @@ namespace EClinic.Repositories
         Task CreateAppointmentAsync(Appointment appointment);
         Task<IEnumerable<Appointment>> GetAppointmentsAsync();
         Task<IEnumerable<Appointment>> GetAppointmentsByDoctorIdAsync(Guid id);
+        Task<IEnumerable<Appointment>> GetAppointmentsByPatientIdAsync(Guid id);
 
         Task<Appointment> GetAppointmentAsync(Guid id);
         

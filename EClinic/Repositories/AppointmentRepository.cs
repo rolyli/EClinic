@@ -56,5 +56,11 @@ namespace EClinic.Repositories
             var filter = filterBuilder.Eq(appointment => appointment.Id, id);
             await appointmentCollection.DeleteOneAsync(filter);
         }
+
+        public async Task<IEnumerable<Appointment>> GetAppointmentsByPatientIdAsync(Guid id)
+        {
+            var filter = filterBuilder.Eq(appointment => appointment.PatientId, id);
+            return await appointmentCollection.Find(filter).ToListAsync();
+        }
     }
 }

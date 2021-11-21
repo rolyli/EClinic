@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Catalog.Settings;
 using EClinic.Repositories;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -17,6 +21,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
+using HealthChecks.UI.Core;
 
 namespace EClinic
 {
@@ -35,14 +40,15 @@ namespace EClinic
             BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
             BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
 
+            var mongoDbSettings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
+
             services.AddMvc(options =>
             {
             options.SuppressAsyncSuffixInActionNames = false;
             });
             
             services.AddSingleton<IMongoClient>(serviceProvider => {
-                var settings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
-                return new MongoClient(settings.ConnectionString);
+                return new MongoClient(mongoDbSettings.ConnectionString);
             });
 
             services.AddSingleton<IPatientRepository, PatientRepository>();
@@ -56,6 +62,22 @@ namespace EClinic
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EClinic", Version = "v1" });
             });
 
+            // Add health checks for observability
+            services.AddHealthChecks()
+                .AddMongoDb(mongoDbSettings.ConnectionString,
+                    name: "mongodb",
+                    timeout: TimeSpan.FromSeconds(3),
+                    tags: new [] { "ready" });
+            
+            /*
+            error: HealthCheck collector HostedService threw an error: Value cannot be null. (Parameter 'source')
+            services
+            .AddHealthChecksUI(setupSettings: setup =>
+            {
+            setup.AddHealthCheckEndpoint("ready", "https://localhost:5001/health/ready");
+            })
+            .AddInMemoryStorage();
+            */
             
         }
 
@@ -78,6 +100,43 @@ namespace EClinic
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                /*
+                ui gives HealthCheck collector HostedService threw an error: Value cannot be null. (Parameter 'source') 
+                error
+                endpoints.MapHealthChecksUI("/health", new HealthCheckOptions
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+                });
+                */
+
+                endpoints.MapHealthChecks("/health/ready", new HealthCheckOptions{
+                    Predicate = (check) => check.Tags.Contains("ready"),
+                    ResponseWriter = async(context, report) => 
+                    {
+                        var result = JsonSerializer.Serialize(
+                            new{
+                                status = report.Status.ToString(),
+                                checks = report.Entries.Select(entry => new {
+                                    name = entry.Key,
+                                    status = entry.Value.Status.ToString(),
+                                    exception = entry.Value.Exception != null ? entry.Value.Exception.Message : "none",
+                                    duration = entry.Value.Duration.ToString()
+                                })
+                            }
+                        );
+
+                        context.Response.ContentType = MediaTypeNames.Application.Json;
+                        await context.Response.WriteAsync(result);
+
+                    }
+
+                });
+                endpoints.MapHealthChecks("/health/live", new HealthCheckOptions{
+                    // exclude any specific health checks
+                    // only see if server is live
+                    Predicate = (check) => false
+                });
             });
         }
     }

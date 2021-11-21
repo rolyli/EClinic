@@ -99,13 +99,21 @@ namespace EClinic.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<AppointmentDto>> GetAppointmentsAsync(string DoctorId = null) 
+        public async Task<IEnumerable<AppointmentDto>> GetAppointmentsAsync(string DoctorId = null, string PatientId = null) 
         {
+            // Get by DoctorId
             if (!string.IsNullOrWhiteSpace(DoctorId)) 
             {
                 return (await repository.GetAppointmentsByDoctorIdAsync(Guid.Parse(DoctorId))).Select( appointment => appointment.AsDto());
             }
 
+            // Get by PatientId
+            if (!string.IsNullOrWhiteSpace(PatientId)) 
+            {
+                return (await repository.GetAppointmentsByPatientIdAsync(Guid.Parse(PatientId))).Select( appointment => appointment.AsDto());
+            }
+
+            // Get all
             var appointments =  (await repository.GetAppointmentsAsync()).Select( appointment => appointment.AsDto());
             return appointments;
         }

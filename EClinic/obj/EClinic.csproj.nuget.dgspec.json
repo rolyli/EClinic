@@ -38,6 +38,22 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AspNetCore.HealthChecks.Mongodb": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "AspNetCore.HealthChecks.UI": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "AspNetCore.HealthChecks.UI.Core": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "AspNetCore.HealthChecks.UI.InMemory.Storage": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "MongoDb.Driver": {
               "target": "Package",
               "version": "[2.13.2, )"

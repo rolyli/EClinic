@@ -10,6 +10,9 @@ namespace EClinic.Repositories
         Task CreateDoctorAsync(Doctor doctor);
         Task<IEnumerable<Doctor>> GetDoctorsAsync();
         Task<Doctor> GetDoctorAsync(Guid id);
+
+        // Overloaded from GetPatientAsync
+        Task<Doctor> GetDoctorAsync(string username);
         Task UpdateDoctorAsync(Doctor doctor);
         Task DeleteDoctorAsync(Guid id);
         
