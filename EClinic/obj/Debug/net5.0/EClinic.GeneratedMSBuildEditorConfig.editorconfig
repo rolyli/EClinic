@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = EClinic
-build_property.ProjectDir = C:\Users\Riley\Desktop\csc3131 web dev\EClinic\
+build_property.ProjectDir = c:\Users\Riley\Desktop\projects\CSC3131\EClinic\

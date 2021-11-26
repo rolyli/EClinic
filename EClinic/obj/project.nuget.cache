@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ib+SZzcAiMlr/smfdP4LihCgYTA/8YiWrMyCcBjq7BxRUU2yz+XPydAM5CREHlAf0/kuFxvwpTWqBbjD1ZrnZQ==",
+  "dgSpecHash": "/EpENiI4Q79elBicn3HaU6GSFVreJXfrWEBEaFXh9svwsgR2871mVGHRcHJzCmGT2GguhKAOWE3NUqELNBPuOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Riley\\Desktop\\csc3131 web dev\\EClinic\\EClinic.csproj",
+  "projectFilePath": "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\EClinic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Riley\\.nuget\\packages\\aspnetcore.healthchecks.mongodb\\5.0.1\\aspnetcore.healthchecks.mongodb.5.0.1.nupkg.sha512",
     "C:\\Users\\Riley\\.nuget\\packages\\aspnetcore.healthchecks.ui\\5.0.1\\aspnetcore.healthchecks.ui.5.0.1.nupkg.sha512",
