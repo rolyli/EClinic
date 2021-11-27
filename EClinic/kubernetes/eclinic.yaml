@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eclinic 
+spec:
+  selector:
+    matchLabels:
+      app: eclinic 
+  template:
+    metadata:
+      labels:
+        app: eclinic 
+    spec:
+      containers:
+      - name: eclinic 
+        imagePullPolicy: Never
+        image: eclinic 
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        env:
+          - name: MongoDbSettings__Host
+            value: mongodb-service.default.svc.cluster.local
+        livenessProbe:
+          httpGet:
+            path: /health/live
+            port: 80
+        readinessProbe:
+          httpGet:
+            path: /health/ready
+            port: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eclinic-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: eclinic
+  ports:
+  - port: 80 
+    targetPort: 80

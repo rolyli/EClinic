@@ -1,0 +1,1041 @@
+{
+	"info": {
+		"_postman_id": "9d75225a-c4e4-487d-ad6c-87304f1797cb",
+		"name": "EClinic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "appointment",
+			"item": [
+				{
+					"name": "/appointment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"doctorId\": \"urn:uuid:cd5d9c1e-ba57-e22b-3bc9-89372ecf3a75\",\n    \"patientId\": \"7468b010-6d77-6828-2f69-8d9f10bdb348\",\n    \"appointmentTime\": \"1978-10-30T07:45:45.334Z\",\n    \"appointmentDurationMins\": -77609995\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/appointment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"doctorId\": \"urn:uuid:cd5d9c1e-ba57-e22b-3bc9-89372ecf3a75\",\n    \"patientId\": \"7468b010-6d77-6828-2f69-8d9f10bdb348\",\n    \"appointmentTime\": \"1978-10-30T07:45:45.334Z\",\n    \"appointmentDurationMins\": -77609995\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/appointment",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"appointment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": \"urn:uuid:ff3bc5fd-9572-d194-052f-ceff461e03b7\",\n \"doctorId\": \"urn:uuid:49726ab6-1608-64de-6716-a74781d53f5d\",\n \"patientId\": \"urn:uuid:eda9eb7c-56df-bbe5-7b2f-789be06a70a6\",\n \"appointmentTime\": \"1986-08-05T23:24:36.068Z\",\n \"appointmentEndTime\": \"2020-11-26T09:57:06.760Z\",\n \"appointmentDurationMins\": -5921035,\n \"createdDate\": \"1957-12-26T05:36:35.549Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/appointment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/appointment?id=urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointment"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/appointment?id=urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"appointment"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/appointment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/appointment?DoctorId=eiusmod ullamco&PatientId=eiusmod ullamco",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointment"
+							],
+							"query": [
+								{
+									"key": "DoctorId",
+									"value": "eiusmod ullamco"
+								},
+								{
+									"key": "PatientId",
+									"value": "eiusmod ullamco"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/appointment?DoctorId=eiusmod ullamco&PatientId=eiusmod ullamco",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"appointment"
+									],
+									"query": [
+										{
+											"key": "DoctorId",
+											"value": "eiusmod ullamco"
+										},
+										{
+											"key": "PatientId",
+											"value": "eiusmod ullamco"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": \"08703b10-2ef8-cddb-96c9-c7aa7f6b5384\",\n  \"doctorId\": \"urn:uuid:e44f1827-0987-e296-b2fa-eaf06d5b8e9d\",\n  \"patientId\": \"urn:uuid:5a81d172-6ef5-eadf-727c-0957e5114e81\",\n  \"appointmentTime\": \"1984-06-26T03:22:36.000Z\",\n  \"appointmentEndTime\": \"1967-01-12T06:41:33.775Z\",\n  \"appointmentDurationMins\": 41560838,\n  \"createdDate\": \"1981-11-18T10:54:06.223Z\"\n },\n {\n  \"id\": \"4015af5c-f366-b3b5-70ab-e60e05992c6f\",\n  \"doctorId\": \"774efb8b-04d0-512f-30cf-a8d7504cf89c\",\n  \"patientId\": \"28e15c49-f8f2-fe08-c223-662dfaa6d067\",\n  \"appointmentTime\": \"2016-07-13T03:41:51.656Z\",\n  \"appointmentEndTime\": \"1971-08-20T01:47:05.814Z\",\n  \"appointmentDurationMins\": -52150742,\n  \"createdDate\": \"1991-06-30T22:08:58.622Z\"\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "/appointment/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/appointment/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"appointment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/appointment/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"appointment",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": \"urn:uuid:ff3bc5fd-9572-d194-052f-ceff461e03b7\",\n \"doctorId\": \"urn:uuid:49726ab6-1608-64de-6716-a74781d53f5d\",\n \"patientId\": \"urn:uuid:eda9eb7c-56df-bbe5-7b2f-789be06a70a6\",\n \"appointmentTime\": \"1986-08-05T23:24:36.068Z\",\n \"appointmentEndTime\": \"2020-11-26T09:57:06.760Z\",\n \"appointmentDurationMins\": -5921035,\n \"createdDate\": \"1957-12-26T05:36:35.549Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "doctor",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "/doctor/:id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/doctor/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"doctor",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/doctor/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"doctor",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"urn:uuid:32bbbecb-3421-e9a5-89a5-a6d14a664a30\",\n \"name\": \"Lorem sed aliqua id\",\n \"createdDate\": \"1965-02-08T18:08:16.751Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/doctor/:id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"laboris\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/doctor/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"doctor",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"laboris\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/doctor/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"doctor",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/doctor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"laboris\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/doctor",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"doctor"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"laboris\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/doctor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"doctor"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": \"urn:uuid:32bbbecb-3421-e9a5-89a5-a6d14a664a30\",\n \"name\": \"Lorem sed aliqua id\",\n \"createdDate\": \"1965-02-08T18:08:16.751Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/doctor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/doctor?id=urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"doctor"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/doctor?id=urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"doctor"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/doctor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/doctor",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"doctor"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/doctor",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"doctor"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": \"urn:uuid:e5f1634c-d482-fabb-bd72-784bbab3b005\",\n  \"name\": \"cupi\",\n  \"createdDate\": \"1985-05-18T22:13:55.595Z\"\n },\n {\n  \"id\": \"urn:uuid:0dd6d3f2-aaa8-9e58-d140-93ab7d783853\",\n  \"name\": \"ut tempor et nulla\",\n  \"createdDate\": \"2017-03-24T23:13:58.275Z\"\n }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "patient",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "/patient/:id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/patient/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/patient/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"id\": \"urn:uuid:32bbbecb-3421-e9a5-89a5-a6d14a664a30\",\n \"name\": \"Lorem sed aliqua id\",\n \"createdDate\": \"1965-02-08T18:08:16.751Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/patient/:id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"laboris\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/patient/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"laboris\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/patient/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"consequat aliquip fugiat cillum\",\n    \"username\": \"et do laborum Duis\",\n    \"password\": \"deserunt dolore\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/patient",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"patient"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"consequat aliquip fugiat cillum\",\n    \"username\": \"et do laborum Duis\",\n    \"password\": \"deserunt dolore\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/patient",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"id\": \"urn:uuid:32bbbecb-3421-e9a5-89a5-a6d14a664a30\",\n \"name\": \"Lorem sed aliqua id\",\n \"createdDate\": \"1965-02-08T18:08:16.751Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/patient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/patient?id=urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"patient"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/patient?id=urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "urn:uuid:2a4f07eb-97bf-d5c0-b1e4-2636a6f2269a"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/patient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/patient",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"patient"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/patient",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"patient"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": \"urn:uuid:e5f1634c-d482-fabb-bd72-784bbab3b005\",\n  \"name\": \"cupi\",\n  \"createdDate\": \"1985-05-18T22:13:55.595Z\"\n },\n {\n  \"id\": \"urn:uuid:0dd6d3f2-aaa8-9e58-d140-93ab7d783853\",\n  \"name\": \"ut tempor et nulla\",\n  \"createdDate\": \"2017-03-24T23:13:58.275Z\"\n }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "health",
+			"item": [
+				{
+					"name": "/live",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "ready",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/health/ready",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"health",
+								"ready"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"id qui\",\n    \"password\": \"et Lorem dolor\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"id qui\",\n    \"password\": \"et Lorem dolor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:8080"
+		}
+	]
+}

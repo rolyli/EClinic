@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net.Mime;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Catalog.Settings;
 using EClinic.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -21,7 +20,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
-using HealthChecks.UI.Core;
+using Eclinic.Settings;
 
 namespace EClinic
 {
@@ -50,6 +49,8 @@ namespace EClinic
             services.AddSingleton<IMongoClient>(serviceProvider => {
                 return new MongoClient(mongoDbSettings.ConnectionString);
             });
+
+            Console.WriteLine(mongoDbSettings.ConnectionString);
 
             services.AddSingleton<IPatientRepository, PatientRepository>();
             services.AddSingleton<IDoctorRepository, DoctorRepository>();
