@@ -166,3 +166,8 @@ C:\Users\Riley\Desktop\projects\CSC3131\EClinic\obj\Debug\net5.0\EClinic.dll
 C:\Users\Riley\Desktop\projects\CSC3131\EClinic\obj\Debug\net5.0\ref\EClinic.dll
 C:\Users\Riley\Desktop\projects\CSC3131\EClinic\obj\Debug\net5.0\EClinic.pdb
 C:\Users\Riley\Desktop\projects\CSC3131\EClinic\obj\Debug\net5.0\EClinic.genruntimeconfig.cache
+c:\Users\Riley\Desktop\projects\CSC3131\EClinic\bin\Debug\net5.0\net5.0\appsettings.Development.json
+c:\Users\Riley\Desktop\projects\CSC3131\EClinic\bin\Debug\net5.0\net5.0\appsettings.json
+c:\Users\Riley\Desktop\projects\CSC3131\EClinic\bin\Debug\net5.0\net5.0\EClinic.deps.json
+c:\Users\Riley\Desktop\projects\CSC3131\EClinic\bin\Debug\net5.0\net5.0\EClinic.runtimeconfig.dev.json
+c:\Users\Riley\Desktop\projects\CSC3131\EClinic\bin\Debug\net5.0\net5.0\EClinic.runtimeconfig.json

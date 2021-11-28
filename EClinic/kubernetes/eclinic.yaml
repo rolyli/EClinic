@@ -14,7 +14,7 @@ spec:
       containers:
       - name: eclinic 
         imagePullPolicy: Never
-        image: eclinic 
+        image: eclinic:v3 
         resources:
           limits:
             memory: "128Mi"

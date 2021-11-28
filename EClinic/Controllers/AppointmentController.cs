@@ -6,6 +6,7 @@ using EClinic.Dtos;
 using EClinic.Entities;
 using EClinic.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace EClinic.Controllers
 {
@@ -15,10 +16,12 @@ namespace EClinic.Controllers
     public class AppointmentController : ControllerBase 
     {
         private readonly IAppointmentRepository repository;
+        private readonly ILogger<AppointmentController> logger;
 
-        public AppointmentController(IAppointmentRepository repository)
+        public AppointmentController(IAppointmentRepository repository, ILogger<AppointmentController> logger)
         {
             this.repository = repository;
+            this.logger = logger;
         }
 
         [HttpPost]
@@ -34,19 +37,19 @@ namespace EClinic.Controllers
 
             foreach (AppointmentDto item in existingAppointments)
             {
-                if ((appointmentDto.AppointmentTime > item.AppointmentTime) && (appointmentDto.AppointmentTime < item.AppointmentEndTime))
+                if ((appointmentDto.AppointmentTime >= item.AppointmentTime) && (appointmentDto.AppointmentTime <= item.AppointmentEndTime))
                 {
                     // Start time is within existing appointment's duration
                     dateClash = true;
                 }
 
-                if ((endTime > item.AppointmentTime) && (endTime < item.AppointmentEndTime))
+                if ((endTime >= item.AppointmentTime) && (endTime <= item.AppointmentEndTime))
                 {
                     // End time is within existing appointment's duration
                     dateClash = true;
                 }
 
-                if ((appointmentDto.AppointmentTime < item.AppointmentTime) && (endTime > item.AppointmentEndTime))
+                if ((appointmentDto.AppointmentTime <= item.AppointmentTime) && (endTime >= item.AppointmentEndTime))
                 {
                     // Start and end time encapsulates existing appointments duration
                     dateClash = true;
@@ -115,6 +118,8 @@ namespace EClinic.Controllers
 
             // Get all
             var appointments =  (await repository.GetAppointmentsAsync()).Select( appointment => appointment.AsDto());
+
+            logger.LogInformation($"{DateTime.UtcNow.ToString("hh:mm:ss")}: Retrieved {appointments.Count()} appointments");            
             return appointments;
         }
 
