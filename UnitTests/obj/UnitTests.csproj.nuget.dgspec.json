@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\UnitTests\\UnitTests.csproj": {}
+    "c:\\Users\\Riley\\Desktop\\projects\\CSC3131\\UnitTests\\UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\EClinic.csproj": {
+    "c:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\EClinic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\EClinic.csproj",
+        "projectUniqueName": "c:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\EClinic.csproj",
         "projectName": "EClinic",
-        "projectPath": "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\EClinic.csproj",
+        "projectPath": "c:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\EClinic.csproj",
         "packagesPath": "C:\\Users\\Riley\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\obj\\",
+        "outputPath": "c:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Riley\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,18 +41,6 @@
           "targetAlias": "net5.0",
           "dependencies": {
             "AspNetCore.HealthChecks.Mongodb": {
-              "target": "Package",
-              "version": "[5.0.1, )"
-            },
-            "AspNetCore.HealthChecks.UI": {
-              "target": "Package",
-              "version": "[5.0.1, )"
-            },
-            "AspNetCore.HealthChecks.UI.Core": {
-              "target": "Package",
-              "version": "[5.0.1, )"
-            },
-            "AspNetCore.HealthChecks.UI.InMemory.Storage": {
               "target": "Package",
               "version": "[5.0.1, )"
             },
@@ -87,14 +75,14 @@
         }
       }
     },
-    "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\UnitTests\\UnitTests.csproj": {
+    "c:\\Users\\Riley\\Desktop\\projects\\CSC3131\\UnitTests\\UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\UnitTests\\UnitTests.csproj",
+        "projectUniqueName": "c:\\Users\\Riley\\Desktop\\projects\\CSC3131\\UnitTests\\UnitTests.csproj",
         "projectName": "UnitTests",
-        "projectPath": "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\UnitTests\\UnitTests.csproj",
+        "projectPath": "c:\\Users\\Riley\\Desktop\\projects\\CSC3131\\UnitTests\\UnitTests.csproj",
         "packagesPath": "C:\\Users\\Riley\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\UnitTests\\obj\\",
+        "outputPath": "c:\\Users\\Riley\\Desktop\\projects\\CSC3131\\UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Riley\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -111,8 +99,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\EClinic.csproj": {
-                "projectPath": "C:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\EClinic.csproj"
+              "c:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\EClinic.csproj": {
+                "projectPath": "c:\\Users\\Riley\\Desktop\\projects\\CSC3131\\EClinic\\EClinic.csproj"
               }
             }
           }
