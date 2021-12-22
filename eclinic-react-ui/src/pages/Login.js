@@ -19,7 +19,7 @@ function Login({setUser}) {
   };
 
   return (
-    <Container className="w-25">
+    <Container className="w-25 bg-light p-5">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Username</Form.Label>

@@ -14,3 +14,9 @@ WORKDIR /app
 ENV ASPNETCORE_URLS=http://+:80
 COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "EClinic.dll"]
+
+{"mechanism":"SCRAM-SHA-1","speculative":false,"principalName":"admin",
+"authenticationDatabase":"admin","remote":"192.168.65.3:47486",
+"extraInfo":{},"error":"UserNotFound: 
+
+Could not find user \"admin\" for db \"admin\""}}
